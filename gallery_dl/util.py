@@ -746,7 +746,7 @@ class PathFormat():
 
 
         # [doujin] hitomila, nhentai
-        if 'nhentai' in vars(extractor)['url'] or 'hitomi' in vars(extractor)['url']:
+        if 'nhentai' in vars(extractor)['url'] or 'hitomi' in vars(extractor)['url'] or 'nexus' in vars(extractor)['url']:
             directory_fmt = ('{category}', '{title} {gallery_id}')
             filename_fmt = extractor.config("filename", extractor.filename_fmt) # default
 
