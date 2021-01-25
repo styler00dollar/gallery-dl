@@ -139,6 +139,7 @@ modules = [
     "recursive",
     "oauth",
     "test",
+    "tbib",
 ]
 
 
