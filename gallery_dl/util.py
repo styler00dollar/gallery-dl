@@ -731,8 +731,31 @@ class PathFormat():
     }
 
     def __init__(self, extractor):
-        filename_fmt = extractor.config("filename", extractor.filename_fmt)
+        #default
+        filename_fmt = extractor.config("filename", extractor.filename_fmt) # '{category}_{id}_{md5}.{extention}' with gelbooru
         directory_fmt = extractor.config("directory", extractor.directory_fmt)
+
+
+        # [doujin] hitomila, nhentai
+        if 'nhentai' in vars(extractor)['url'] or 'hitomi' in vars(extractor)['url']:
+            directory_fmt = ('{category}', '{title} {gallery_id}')
+            filename_fmt = extractor.config("filename", extractor.filename_fmt) # default
+
+        # [MD5] tbib, danbooru, gelbooru, yandere, konachan, lolibooru, sankaku
+        if 'tbib' in vars(extractor)['url'] or 'danbooru' in vars(extractor)['url'] or 'gelbooru' in vars(extractor)['url'] or 'yande.re' in vars(extractor)['url'] or 'konachan' in vars(extractor)['url'] or 'lolibooru' in vars(extractor)['url'] or 'sankaku' in vars(extractor)['url']:
+            directory_fmt = ''
+            filename_fmt = '{md5}.{extension}'
+
+        # [dataid] nozomi
+        if 'nozomi' in vars(extractor)['url']:
+            directory_fmt = ''
+            filename_fmt = '{dataid}.{extension}'
+
+        # [id] e621
+        if 'e621' in vars(extractor)['url']:
+            directory_fmt = ''
+            filename_fmt = '{id}.{extension}'
+
         kwdefault = extractor.config("keywords-default")
 
         extension_map = extractor.config("extension-map")
