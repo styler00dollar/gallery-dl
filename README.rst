@@ -9,7 +9,6 @@ and powerful filenaming capabilities.
 
 Info about fork:
   - Customized path handling (own custom paths depending on source url)
-  - Own code for tbib.
 
 |pypi| |build| |gitter|
 
