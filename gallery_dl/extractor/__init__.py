@@ -138,8 +138,7 @@ modules = [
     "directlink",
     "recursive",
     "oauth",
-    "test",
-    "tbib",
+    "test"
 ]
 
 
