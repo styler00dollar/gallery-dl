@@ -8,7 +8,8 @@
 
 """Extractors for https://tbib.org/"""
 
-from . import booru
+#from . import booru
+from . import gelbooru_v02
 from .. import text, exception
 
 
@@ -18,7 +19,7 @@ class tbibBase():
     root = "https://tbib.org"
 
 
-class tbibTagExtractor(tbibBase, booru.BooruTagExtractor):
+class tbibTagExtractor(tbibBase, gelbooru_v02.GelbooruV02TagExtractor):
     """Extractor for images from tbib based on search-tags"""
     pattern = (r"(?:https?://)?(?:www\.)?tbib\.org/(?:index\.php)?"
                r"\?page=post&s=list&tags=(?P<tags>[^&#]+)")
@@ -33,7 +34,7 @@ class tbibTagExtractor(tbibBase, booru.BooruTagExtractor):
     )
 
 
-class tbibExtractor(tbibBase, booru.BooruPoolExtractor):
+class tbibExtractor(tbibBase, gelbooru_v02.GelbooruV02PoolExtractor):
     """Extractor for image-pools from gelbooru.com"""
     pattern = (r"(?:https?://)?(?:www\.)?tbib\.org/(?:index\.php)?"
                r"\?page=pool&s=show&id=(?P<pool>\d+)")
@@ -63,7 +64,7 @@ class tbibExtractor(tbibBase, booru.BooruPoolExtractor):
         }
 
 
-class tbibPostExtractor(tbibBase, booru.BooruPostExtractor):
+class tbibPostExtractor(tbibBase, gelbooru_v02.GelbooruV02PostExtractor):
     """Extractor for single images from gelbooru.com"""
     pattern = (r"(?:https?://)?(?:www\.)?tbib\.org/(?:index\.php)?"
                r"\?page=post&s=view&id=(?P<post>\d+)")
