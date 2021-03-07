@@ -7,6 +7,9 @@ collections from several image hosting sites (see `Supported Sites`_).
 It is a cross-platform tool with many configuration options
 and powerful filenaming capabilities.
 
+Info about fork:
+  - Customized path handling (own custom paths depending on source url)
+  - Own code for tbib.
 
 |pypi| |build| |gitter|
 
@@ -39,6 +42,12 @@ easily installed or upgraded using pip_:
 .. code:: bash
 
     $ python3 -m pip install -U gallery-dl
+
+You can install this fork with:
+
+.. code:: bash
+
+    $ python3 -m pip install git+https://github.com/styler00dollar/gallery-dl.git
 
 Installing the latest dev version directly from GitHub can be done with
 pip_ as well:
