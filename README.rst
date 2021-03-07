@@ -9,6 +9,7 @@ and powerful filenaming capabilities.
 
 Info about fork:
   - Customized path handling (own custom paths depending on source url)
+  - Fixing gelbooru videos
 
 |pypi| |build| |gitter|
 
